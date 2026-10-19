@@ -26,11 +26,11 @@ class DatabaseSeeder extends Seeder
         'Plus une goutte d\'eau au robinet depuis ce matin.',
         'L\'eau coule très faiblement, impossible de remplir les bidons.',
         'Coupure d\'eau dans tout le bloc depuis hier soir.',
-        'L\'eau est sortie trouble, puis plus rien depuis 6 h.',
+        'L\'eau est sortie trouble, puis plus rien depuis ce matin.',
     ];
 
     private const ELECTRICITY_DESCRIPTIONS = [
-        'Plus de courant dans toute la rue depuis 19 h.',
+        'Plus de courant dans toute la rue depuis plusieurs heures.',
         'Le courant va et vient depuis une heure, les appareils s\'éteignent.',
         'Transformateur en panne au carrefour, tout le quartier est dans le noir.',
         'Coupure d\'électricité depuis ce matin, les commerces sont fermés.',
