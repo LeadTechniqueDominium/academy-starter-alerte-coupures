@@ -1,0 +1,36 @@
+name: Tests
+
+# Lancé à chaque push et à chaque pull request.
+on:
+  push:
+  pull_request:
+
+jobs:
+  tests:
+    name: Pint et Pest (PHP 8.3)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v5
+
+      - name: Installer PHP 8.3
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, pdo_sqlite, sqlite3
+          coverage: none
+
+      - name: Installer les dépendances PHP
+        run: composer install --no-interaction --no-progress --prefer-dist
+
+      - name: Préparer le fichier .env
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+
+      - name: Vérifier le style du code (Pint)
+        run: vendor/bin/pint --test
+
+      - name: Lancer les tests (Pest)
+        run: vendor/bin/pest

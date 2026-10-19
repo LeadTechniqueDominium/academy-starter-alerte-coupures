@@ -1,0 +1,17 @@
+{
+    "Forbidden": "Accès refusé",
+    "This action is unauthorized.": "Vous n'êtes pas autorisé à effectuer cette action.",
+    "Not Found": "Page introuvable",
+    "Page Expired": "Page expirée, veuillez recharger la page",
+    "Too Many Requests": "Trop de tentatives, veuillez patienter un instant",
+    "Server Error": "Erreur du serveur",
+    "Service Unavailable": "Service indisponible",
+    "Unauthorized": "Non autorisé",
+    "Payment Required": "Paiement requis",
+    "Pagination Navigation": "Navigation entre les pages",
+    "Showing": "Affichage de",
+    "to": "à",
+    "of": "sur",
+    "results": "résultats",
+    "Go to page :page": "Aller à la page :page"
+}
