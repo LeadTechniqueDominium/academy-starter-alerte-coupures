@@ -9,6 +9,7 @@ use App\Enums\OutageType;
 use App\Models\Neighborhood;
 use App\Models\Subscriber;
 use App\Models\User;
+use Carbon\CarbonInterface;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -138,7 +139,7 @@ class DatabaseSeeder extends Seeder
     /**
      * Crée une coupure et son signalement (un signalement par coupure, voir App\Actions\SubmitReport).
      */
-    private function createIncident(string $commune, string $neighborhood, OutageType $type, \DateTimeInterface $startedAt, ?\DateTimeInterface $resolvedAt): void
+    private function createIncident(string $commune, string $neighborhood, OutageType $type, CarbonInterface $startedAt, ?CarbonInterface $resolvedAt): void
     {
         $incident = $this->neighborhood($commune, $neighborhood)->incidents()->create([
             'type' => $type,
