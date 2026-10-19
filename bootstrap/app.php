@@ -12,7 +12,8 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // Un modérateur déjà connecté qui ouvre /connexion est renvoyé vers l'espace de modération.
+        $middleware->redirectUsersTo(fn () => route('moderation.reports.index'));
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(
